@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <img src="images/growth_club.png" alt="PWA Logo" class="animate__animated animate__fadeIn">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#prompts">Prompts</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="hero" id="home">
+            <div class="container">
+                <h1 class="animate__animated animate__fadeInUp">Empower Your Team with AI Prompts</h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">A curated collection of powerful prompts to enhance your team's productivity</p>
+                <a href="#prompts" class="btn primary animate__animated animate__fadeInUp animate__delay-2s">Explore Prompts</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="prompts-section" id="prompts">
+            <div class="container">
+                <h2 class="section-title">Professional AI Prompts</h2>
+                <p>Copy and customize these prompts to supercharge your team's workflow</p>
+                
+                <div class="prompt-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="presentation">Presentation</button>
+                    <button class="filter-btn" data-filter="research">Research</button>
+                    <button class="filter-btn" data-filter="pitch">Pitch</button>
+                </div>
+                
+                <div class="prompts-container">
+                    <!-- Hook-Crafter Prompt -->
+                    <div class="prompt-card" data-category="presentation">
+                        <div class="prompt-header">
+                            <div class="prompt-icon">🎯</div>
+                            <h3>Hook‑Crafter</h3>
+                            <span class="prompt-tag">Presentation</span>
+                        </div>
+                        <p class="prompt-description">Generate high-impact content for your presentation's opening slide</p>
+                        <div class="prompt-actions">
+                            <button class="btn view-btn" data-prompt="hook-crafter">View Prompt</button>
+                            <button class="btn copy-btn" data-prompt="hook-crafter"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Category Intel Lab Prompt -->
+                    <div class="prompt-card" data-category="research">
+                        <div class="prompt-header">
+                            <div class="prompt-icon">🌐</div>
+                            <h3>Category Intel Lab</h3>
+                            <span class="prompt-tag">Research</span>
+                        </div>
+                        <p class="prompt-description">Get comprehensive market research and competitive intelligence</p>
+                        <div class="prompt-actions">
+                            <button class="btn view-btn" data-prompt="category-intel">View Prompt</button>
+                            <button class="btn copy-btn" data-prompt="category-intel"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Pitch-Experience Ideator Prompt -->
+                    <div class="prompt-card" data-category="pitch">
+                        <div class="prompt-header">
+                            <div class="prompt-icon">🎭</div>
+                            <h3>Pitch‑Experience Ideator</h3>
+                            <span class="prompt-tag">Pitch</span>
+                        </div>
+                        <p class="prompt-description">Transform your narrative into an unforgettable experiential pitch</p>
+                        <div class="prompt-actions">
+                            <button class="btn view-btn" data-prompt="pitch-experience">View Prompt</button>
+                            <button class="btn copy-btn" data-prompt="pitch-experience"><i class="fas fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="section-title">About This Library</h2>
+                <p>This AI prompt library is designed to help your team leverage artificial intelligence effectively in your workflows. Each prompt template is crafted to generate specific, high-quality outputs that can enhance your presentations, research, and client pitches.</p>
+                <p>Simply copy the prompt you need, customize the inputs for your specific project, and paste it into your preferred AI assistant.</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Prompt Modal -->
+    <div class="modal" id="prompt-modal">
+        <div class="modal-content animate__animated animate__zoomIn">
+            <span class="close-modal">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PromptVault. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

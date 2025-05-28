@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base */
+  --background: 240 10% 99%;
+  --foreground: 240 10% 3.9%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --border: 240 6% 90%;
+  --input: 240 5.9% 90%;
+  
+  /* Brand Colors - Converted from HEX to HSL */
+  --teal: 178 100% 47%; /* #0ee0d8 */
+  --blue: 224 92% 65%; /* #5683f7 */
+  --purple: 272 58% 64%; /* #ac73d4 */
+  --pink: 324 82% 52%; /* #eb20a9 */
+  --yellow: 52 100% 53%; /* #ffd311 */
+  
+  /* Semantic colors using brand colors */
+  --primary: var(--blue);
+  --primary-foreground: 0 0% 98%;
+  --secondary: var(--pink);
+  --secondary-foreground: 0 0% 98%;
+  --accent: var(--purple);
+  --accent-foreground: 0 0% 98%;
+  --highlight: var(--teal);
+  --highlight-foreground: 240 5.9% 10%;
+  --emphasis: var(--yellow);
+  --emphasis-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: var(--blue);
+  --radius: 0.75rem;
+}
+
+.dark {
+  /* Base */
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  
+  /* Brand Colors - Darker versions for dark mode */
+  --teal: 178 80% 40%; /* Darker teal for dark mode */
+  --blue: 224 80% 55%; /* Darker blue for dark mode */
+  --purple: 272 50% 55%; /* Darker purple for dark mode */
+  --pink: 324 75% 45%; /* Darker pink for dark mode */
+  --yellow: 52 90% 45%; /* Darker yellow for dark mode */
+  
+  /* Semantic colors using brand colors */
+  --primary: var(--blue);
+  --primary-foreground: 0 0% 98%;
+  --secondary: var(--pink);
+  --secondary-foreground: 0 0% 98%;
+  --accent: var(--purple);
+  --accent-foreground: 0 0% 98%;
+  --highlight: var(--teal);
+  --highlight-foreground: 0 0% 98%;
+  --emphasis: var(--yellow);
+  --emphasis-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: var(--blue);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer utilities {
+  .backdrop-blur {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delay-1 {
+    animation: float 6s ease-in-out 1s infinite;
+  }
+
+  .animate-float-delay-2 {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease forwards;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Hide scrollbar for clean UI */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-heading {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500;
+}
+
+.gradient-hero {
+  background: radial-gradient(circle at 50% 0%, hsl(var(--primary) / 0.1), transparent 70%);
+}
+
+.gradient-card-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)));
+  border-radius: var(--radius) var(--radius) 0 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.card-hover:hover .gradient-card-top {
+  transform: scaleX(1);
+}
+
+/* Text shadow for better visibility on gradients */
+.text-shadow-glow {
+  text-shadow: 0 0 8px rgba(14, 224, 216, 0.8),
+               0 0 12px rgba(86, 131, 247, 0.6),
+               0 0 2px rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
